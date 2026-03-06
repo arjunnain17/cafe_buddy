@@ -6,8 +6,8 @@ An NLP-powered cafe menu recommendation CLI using Gemini Embeddings and FAISS ve
 
 1. **Clone repository & enter directory**
    ```bash
-   git clone <repo_url>
-   cd Cafe_buddy
+   git clone https://github.com/arjunnain17/cafe_buddy.git
+   cd cafe_buddy
    ```
 
 2. **Install requirements**
