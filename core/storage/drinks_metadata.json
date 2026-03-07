@@ -1,0 +1,385 @@
+[
+  {
+    "id": "americano",
+    "name": "Americano",
+    "prices": {
+      "medium": 90.0
+    },
+    "default_size": "medium",
+    "description": "Classic black coffee made by diluting espresso with hot water. Smooth body with a clean coffee aroma and mild bitterness similar to drip brewed coffee.",
+    "tags": [
+      "coffee",
+      "black",
+      "strong",
+      "hot",
+      "espresso"
+    ],
+    "allergens": [],
+    "dietary_tags": [
+      "vegan",
+      "dairy-free",
+      "gluten-free",
+      "vegetarian"
+    ],
+    "base_milk": null,
+    "customisable": false,
+    "compatible_addons": [
+      "extra_espresso_shot"
+    ],
+    "category": "hot",
+    "available": true
+  },
+  {
+    "id": "cappuccino",
+    "name": "Cappuccino",
+    "prices": {
+      "medium": 100.0
+    },
+    "default_size": "medium",
+    "description": "Espresso coffee topped with steamed milk and thick microfoam. Creamy texture with balanced espresso strength and velvety milk foam.",
+    "tags": [
+      "coffee",
+      "espresso",
+      "creamy",
+      "hot",
+      "milk"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "extra_espresso_shot",
+      "vanilla_syrup",
+      "caramel_syrup",
+      "hazelnut_syrup"
+    ],
+    "category": "hot",
+    "available": true
+  },
+  {
+    "id": "latte",
+    "name": "Latte",
+    "prices": {
+      "medium": 110.0
+    },
+    "default_size": "medium",
+    "description": "Espresso blended with a large amount of steamed milk creating a smooth creamy coffee drink with mild coffee intensity and silky texture.",
+    "tags": [
+      "coffee",
+      "milky",
+      "smooth",
+      "creamy",
+      "hot"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "extra_espresso_shot",
+      "vanilla_syrup",
+      "caramel_syrup",
+      "hazelnut_syrup"
+    ],
+    "category": "hot",
+    "available": true
+  },
+  {
+    "id": "mocha",
+    "name": "Mocha",
+    "prices": {
+      "medium": 130.0
+    },
+    "default_size": "medium",
+    "description": "Espresso mixed with chocolate syrup and steamed milk creating a sweet chocolate coffee with rich cocoa flavor and creamy texture.",
+    "tags": [
+      "coffee",
+      "chocolate",
+      "sweet",
+      "creamy",
+      "hot"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "extra_espresso_shot",
+      "vanilla_syrup",
+      "caramel_syrup",
+      "whipped_cream_topping"
+    ],
+    "category": "hot",
+    "available": true
+  },
+  {
+    "id": "flat_white",
+    "name": "Flat White",
+    "prices": {
+      "medium": 130.0
+    },
+    "default_size": "medium",
+    "description": "Strong espresso coffee with velvety microfoam milk. Creamy but with a stronger espresso taste compared to a latte.",
+    "tags": [
+      "coffee",
+      "strong",
+      "creamy",
+      "espresso"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "extra_espresso_shot"
+    ],
+    "category": "hot",
+    "available": true
+  },
+  {
+    "id": "espresso",
+    "name": "Espresso",
+    "prices": {
+      "medium": 90.0
+    },
+    "default_size": "medium",
+    "description": "Concentrated shot of espresso coffee with intense aroma, rich crema and bold flavor. Strong caffeine hit and deep roasted coffee notes.",
+    "tags": [
+      "coffee",
+      "espresso",
+      "strong",
+      "black"
+    ],
+    "allergens": [],
+    "dietary_tags": [
+      "vegan",
+      "dairy-free",
+      "gluten-free",
+      "vegetarian"
+    ],
+    "base_milk": null,
+    "customisable": false,
+    "compatible_addons": [],
+    "category": "hot",
+    "available": true
+  },
+  {
+    "id": "iced_latte",
+    "name": "Iced Latte",
+    "prices": {
+      "medium": 120.0,
+      "large": 140.0
+    },
+    "default_size": "medium",
+    "description": "Chilled espresso mixed with cold milk and served over ice creating a refreshing creamy iced coffee drink.",
+    "tags": [
+      "coffee",
+      "iced",
+      "cold",
+      "milky",
+      "refreshing"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "extra_espresso_shot",
+      "vanilla_syrup",
+      "caramel_syrup",
+      "hazelnut_syrup"
+    ],
+    "category": "iced",
+    "available": true
+  },
+  {
+    "id": "cold_brew_black",
+    "name": "Cold Brew Black",
+    "prices": {
+      "medium": 110.0,
+      "large": 130.0
+    },
+    "default_size": "medium",
+    "description": "Coffee slowly steeped in cold water for many hours producing smooth low-acidity black coffee served chilled over ice.",
+    "tags": [
+      "coffee",
+      "cold brew",
+      "black",
+      "smooth"
+    ],
+    "allergens": [],
+    "dietary_tags": [
+      "vegan",
+      "dairy-free",
+      "gluten-free",
+      "vegetarian"
+    ],
+    "base_milk": null,
+    "customisable": false,
+    "compatible_addons": [
+      "vanilla_syrup",
+      "caramel_syrup",
+      "hazelnut_syrup",
+      "extra_espresso_shot"
+    ],
+    "category": "iced",
+    "available": true
+  },
+  {
+    "id": "classic_cold_coffee",
+    "name": "Classic Cold Coffee",
+    "prices": {
+      "medium": 105.0
+    },
+    "default_size": "medium",
+    "description": "Blended iced coffee drink made with chilled coffee, milk and ice creating a creamy refreshing caf\u00e9 style cold coffee.",
+    "tags": [
+      "coffee",
+      "cold",
+      "creamy",
+      "sweet"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "vanilla_syrup",
+      "caramel_syrup",
+      "hazelnut_syrup",
+      "whipped_cream_topping"
+    ],
+    "category": "blended",
+    "available": true
+  },
+  {
+    "id": "mocha_cookie_frappe",
+    "name": "Mocha Cookie Frappe",
+    "prices": {
+      "medium": 180.0
+    },
+    "default_size": "medium",
+    "description": "Blended iced coffee frappe with chocolate mocha flavor and crushed cookie pieces. Thick, creamy dessert style coffee drink.",
+    "tags": [
+      "coffee",
+      "frappe",
+      "chocolate",
+      "dessert",
+      "blended"
+    ],
+    "allergens": [
+      "milk",
+      "gluten"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "whipped_cream_topping"
+    ],
+    "category": "blended",
+    "available": true
+  },
+  {
+    "id": "matcha_latte",
+    "name": "Matcha Latte",
+    "prices": {
+      "medium": 220.0
+    },
+    "default_size": "medium",
+    "description": "Japanese matcha green tea whisked with milk creating a creamy earthy flavored tea latte with subtle bitterness and natural sweetness.",
+    "tags": [
+      "matcha",
+      "green tea",
+      "creamy",
+      "tea"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "vanilla_syrup"
+    ],
+    "category": "tea",
+    "available": true
+  },
+  {
+    "id": "belgian_hot_chocolate",
+    "name": "Belgian Hot Chocolate",
+    "prices": {
+      "medium": 170.0
+    },
+    "default_size": "medium",
+    "description": "Rich hot chocolate made with Belgian cocoa and steamed milk creating a thick creamy chocolate drink.",
+    "tags": [
+      "chocolate",
+      "hot",
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "milk"
+    ],
+    "dietary_tags": [
+      "vegetarian"
+    ],
+    "base_milk": "whole_milk",
+    "customisable": true,
+    "compatible_addons": [
+      "oat_milk_upgrade",
+      "almond_milk_upgrade",
+      "whipped_cream_topping",
+      "marshmallow_topping"
+    ],
+    "category": "hot",
+    "available": true
+  }
+]
