@@ -48,7 +48,7 @@ An AI-powered cafe ordering CLI featuring a conversational barista agent built o
 
 ## Usage
 
-Just talk to Alex naturally:
+Just talk to Heer naturally:
 
 ```
 You: something warm and sweet under ₹200
@@ -59,7 +59,7 @@ You: /basket
 You: checkout
 ```
 
-Alex will search the menu, check dietary conflicts, track your budget, suggest upsells, and manage your basket automatically.
+Heer will search the menu, check dietary conflicts, track your budget, suggest upsells, and manage your basket automatically.
 
 ## Slash Commands
 
