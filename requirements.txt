@@ -1,4 +1,17 @@
+# vector/index support
 numpy>=1.26.4
 faiss-cpu>=1.8.0
+
+# LLM / agent stack
+langchain             
+langchain-google-genai         # Google Gemini wrapper used in core/agent.py
+langgraph                      # for MemorySaver, checkpointing
+
+# model client
 google-genai>=0.5.0
+
+# utilities
 python-dotenv>=1.0.1
+rich                           # console UI
+
+# add any other deps your project uses
