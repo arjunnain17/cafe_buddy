@@ -15,6 +15,7 @@ Usage:
 
 import os
 import json
+import time
 from unittest import result
 import numpy as np
 import faiss
@@ -181,34 +182,3 @@ def search_customizations(query: str, k: int = 3) -> list[dict]:
     return search_index("customizations", query, k)
 
 
-if __name__ == "__main__":
-    # test each catalog
-    load_indexes()
-    queries = {
-    "drinks": [
-        "something warm and sweet",
-        "strong coffee I need energy",
-        "cold and refreshing",
-        "vegan friendly drink",
-        "something with no coffee",
-    ],
-    "cookies": [
-        "something chocolatey and indulgent",
-        "nutty cookie",
-        "something classic and comforting",
-    ],
-    "customizations": [
-        "dairy free milk option",
-        "make it stronger",
-        "something sweet to add",
-    ],
-}
-
-for catalog, qs in queries.items():
-    print(f"\n{'='*50}")
-    print(f"CATALOG: {catalog}")
-    for q in qs:
-        print(f"\n  Query: '{q}'")
-        fn = {"drinks": search_drinks, "cookies": search_cookies, "customizations": search_customizations}[catalog]
-        for r in fn(q, k=3):
-            print(f"    {r['name']:<35} {r['score']}")

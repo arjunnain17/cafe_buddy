@@ -14,7 +14,7 @@ def set_budget(amount: float) -> str:
     """
     global _budget
     _budget = amount
-    return f"Budget set to ₹{amount:.2f}"
+    return f"Budget set to ₹{amount:.0f}"
 def get_budget() -> float | None:
     """Returns the current budget, or None if not set."""
     return _budget
@@ -79,7 +79,7 @@ def add_drink(drink: dict, size: str, customizations: list[dict]) -> str:
     addon_str   = f" + {addon_names}" if addon_names else ""
     return (
         f"Added {drink['name']} ({size.capitalize()})"
-        f"{addon_str} → ${item_total:.2f} "
+        f"{addon_str} → ₹{item_total:.0f} "
         f"[{basket_id}]"
     )
 
@@ -107,7 +107,7 @@ def add_cookie(cookie: dict) -> str:
     _basket.append(basket_item)
 
     return (
-        f"Added {cookie['name']} → ${cookie['price']:.2f} "
+        f"Added {cookie['name']} → ₹{cookie['price']:.0f} "
         f"[{basket_id}]"
     )
 
@@ -134,8 +134,8 @@ def remove_item(basket_id: str) -> str:
     _basket = [item for item in _basket if item["basket_id"] != basket_id]
 
     return (
-        f"Removed {match['name']} (${match['item_total']:.2f}). "
-        f"New total: ${get_total():.2f}"
+        f"Removed {match['name']} (₹{match['item_total']:.0f}). "
+        f"New total: ₹{get_total():.0f}"
     )
 
 def get_total() -> float:
@@ -172,37 +172,37 @@ def view_basket() -> str:
         if item["type"] == "drink":
             size_str = f" ({item['size'].capitalize()})" if item["size"] else ""
             name_size = f"{item['name']}{size_str}"
-            lines.append(f"  {name_size:<{COL}} ${item['base_price']:.2f}  [{item['basket_id']}]")
+            lines.append(f"  {name_size:<{COL}} ₹{item['base_price']:.0f}  [{item['basket_id']}]")
             for c in item["customizations"]:
-                lines.append(f"    + {c['name']:<{COL - 2}} ${c['price']:.2f}")
+                lines.append(f"    + {c['name']:<{COL - 2}} ₹{c['price']:.0f}")
                 if item["customizations"]:
-                    lines.append(f"    {'subtotal':<{COL - 2}} ${item['item_total']:.2f}")
+                    lines.append(f"    {'subtotal':<{COL - 2}} ₹{item['item_total']:.0f}")
 
                 elif item["type"] == "cookie":
-                    lines.append(f"  {item['name']:<{COL}} ${item['item_total']:.2f}  [{item['basket_id']}]")
+                    lines.append(f"  {item['name']:<{COL}} ₹{item['item_total']:.0f}  [{item['basket_id']}]")
 
         # ── cookie line ───────────────────────────────────────
         elif item["type"] == "cookie":
             lines.append(
-                f"  {item['name']:<35} ${item['item_total']:.2f}"
+                f"  {item['name']:<35} ₹{item['item_total']:.0f}"
                 f"  [{item['basket_id']}]"
             )
 
     # ── total ─────────────────────────────────────────────────
     total = get_total()
     lines.append(f"\n  {'─' * 40}")
-    lines.append(f"  {'TOTAL':<35} ${total:.2f}")
+    lines.append(f"  {'TOTAL':<35} ₹{total:.0f}")
 
     # ── budget remaining ──────────────────────────────────────
     if _budget is not None:
         remaining = get_remaining()
         if remaining >= 0:
             lines.append(
-                f"  {'Budget remaining':<35} ${remaining:.2f}"
+                f"  {'Budget remaining':<35} ₹{remaining:.0f}"
             )
         else:
             lines.append(
-                f"  {'Over budget by':<35} ${abs(remaining):.2f}"
+                f"  {'Over budget by':<35} ₹{abs(remaining):.0f}"
             )
 
     return "\n".join(lines)
@@ -231,6 +231,7 @@ def checkout() -> str:
     Clears the basket after generating the receipt.
     Returns an error string if basket is empty.
     """
+
     COL = 36
     if not _basket:
         return "Your basket is empty — nothing to checkout."
@@ -246,36 +247,34 @@ def checkout() -> str:
     for item in _basket:
 
         if item["type"] == "drink":
-            size_str = f" ({item['size'].capitalize()})" if item["size"] else ""
+            size_str  = f" ({item['size'].capitalize()})" if item["size"] else ""
             name_size = f"{item['name']}{size_str}"
-            lines.append(f"  {name_size:<{COL}} ${item['base_price']:.2f}  [{item['basket_id']}]")
+            lines.append(f"  {name_size:<{COL}} ₹{item['base_price']:.0f}  [{item['basket_id']}]")
             for c in item["customizations"]:
-                lines.append(f"    + {c['name']:<{COL - 2}} ${c['price']:.2f}")
-                if item["customizations"]:
-                    lines.append(f"    {'subtotal':<{COL - 2}} ${item['item_total']:.2f}")
+                lines.append(f"    + {c['name']:<{COL - 4}} ₹{c['price']:.0f}")
+            if item["customizations"]:
+                lines.append(f"    {'subtotal':<{COL - 4}} ₹{item['item_total']:.0f}")
 
-                elif item["type"] == "cookie":
-                    lines.append(f"  {item['name']:<{COL}} ${item['item_total']:.2f}  [{item['basket_id']}]")
-                elif item["type"] == "cookie":
-                    lines.append(
-                    f"  {item['name']:<35} ${item['item_total']:.2f}"
-            )
+        elif item["type"] == "cookie":
+            lines.append(f"  {item['name']:<{COL}} ₹{item['item_total']:.0f}  [{item['basket_id']}]")
 
-        # blank line between items
-        lines.append("")
+    # blank line between items
+    lines.append("")
+    # blank line between items
+    lines.append("")
 
     # ── total ─────────────────────────────────────────────────
     total = get_total()
     lines.append(f"  {'─' * 42}")
-    lines.append(f"  {'TOTAL':<35} ${total:.2f}")
+    lines.append(f"  {'TOTAL':<35} ₹{total:.0f}")
 
     # ── budget summary ────────────────────────────────────────
     if _budget is not None:
         remaining = get_remaining()
         if remaining >= 0:
-            lines.append(f"  {'Budget remaining':<35} ${remaining:.2f}")
+            lines.append(f"  {'Budget remaining':<35} ₹{remaining:.0f}")
         else:
-            lines.append(f"  {'Over budget by':<35} ${abs(remaining):.2f}")
+            lines.append(f"  {'Over budget by':<35} ₹{abs(remaining):.0f}")
 
     # ── footer ────────────────────────────────────────────────
     lines.append("╚══════════════════════════════════════════╝")
