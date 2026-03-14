@@ -61,6 +61,13 @@ You: checkout
 
 Heer will search the menu, check dietary conflicts, track your budget, suggest upsells, and manage your basket automatically.
 
+## Examples
+
+Here are some screenshots of Cafe Buddy in action:
+
+![Cafe Buddy Example 1](examples/screenshot1.png)
+![Cafe Buddy Example 2](examples/screenshot2.png)
+
 ## Slash Commands
 
 | Command | Description |
