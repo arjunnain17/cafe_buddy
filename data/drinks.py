@@ -1,376 +1,139 @@
-drinks = [
-
-{
-"id": "americano",
-"name": "Americano",
-
-"prices": {
-"medium": 90.0
-},
-
-"default_size": "medium",
-
-"description": "Classic black coffee made by diluting espresso with hot water. Smooth body with a clean coffee aroma and mild bitterness similar to drip brewed coffee.",
-
-"tags": ["coffee","black","strong","hot","espresso"],
-
-"allergens": [],
-"dietary_tags": ["vegan","dairy-free","gluten-free","vegetarian"],
-
-"base_milk": None,
-"customisable": False,
-
-"compatible_addons": [
-"extra_espresso_shot"
-],
-
-"category": "hot",
-"available": True
-},
-
-{
-"id": "cappuccino",
-"name": "Cappuccino",
-
-"prices": {
-"medium": 100.0
-},
-
-"default_size": "medium",
-
-"description": "Espresso coffee topped with steamed milk and thick microfoam. Creamy texture with balanced espresso strength and velvety milk foam.",
-
-"tags": ["coffee","espresso","creamy","hot","milk"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"extra_espresso_shot",
-"vanilla_syrup",
-"caramel_syrup",
-"hazelnut_syrup"
-],
-
-"category": "hot",
-"available": True
-},
-
-{
-"id": "latte",
-"name": "Latte",
-
-"prices": {
-"medium": 110.0
-},
-
-"default_size": "medium",
-
-"description": "Espresso blended with a large amount of steamed milk creating a smooth creamy coffee drink with mild coffee intensity and silky texture.",
-
-"tags": ["coffee","milky","smooth","creamy","hot"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"extra_espresso_shot",
-"vanilla_syrup",
-"caramel_syrup",
-"hazelnut_syrup"
-],
-
-"category": "hot",
-"available": True
-},
-
-{
-"id": "mocha",
-"name": "Mocha",
-
-"prices": {
-"medium": 130.0
-},
-
-"default_size": "medium",
-
-"description": "Espresso mixed with chocolate syrup and steamed milk creating a sweet chocolate coffee with rich cocoa flavor and creamy texture.",
-
-"tags": ["coffee","chocolate","sweet","creamy","hot"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"extra_espresso_shot",
-"vanilla_syrup",
-"caramel_syrup",
-"whipped_cream_topping"
-],
-
-"category": "hot",
-"available": True
-},
-
-{
-"id": "flat_white",
-"name": "Flat White",
-
-"prices": {
-"medium": 130.0
-},
-
-"default_size": "medium",
-
-"description": "Strong espresso coffee with velvety microfoam milk. Creamy but with a stronger espresso taste compared to a latte.",
-
-"tags": ["coffee","strong","creamy","espresso"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"extra_espresso_shot"
-],
-
-"category": "hot",
-"available": True
-},
-
-{
-"id": "espresso",
-"name": "Espresso",
-
-"prices": {
-"medium": 90.0
-},
-
-"default_size": "medium",
-
-"description": "Concentrated shot of espresso coffee with intense aroma, rich crema and bold flavor. Strong caffeine hit and deep roasted coffee notes.",
-
-"tags": ["coffee","espresso","strong","black"],
-
-"allergens": [],
-"dietary_tags": ["vegan","dairy-free","gluten-free","vegetarian"],
-
-"base_milk": None,
-"customisable": False,
-
-"compatible_addons": [],
-
-"category": "hot",
-"available": True
-},
-
-{
-"id": "iced_latte",
-"name": "Iced Latte",
-
-"prices": {
-"medium": 120.0,
-"large": 140.0
-},
-
-"default_size": "medium",
-
-"description": "Chilled espresso mixed with cold milk and served over ice creating a refreshing creamy iced coffee drink.",
-
-"tags": ["coffee","iced","cold","milky","refreshing"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"extra_espresso_shot",
-"vanilla_syrup",
-"caramel_syrup",
-"hazelnut_syrup"
-],
-
-"category": "iced",
-"available": True
-},
-
-{
-"id": "cold_brew_black",
-"name": "Cold Brew Black",
-
-"prices": {
-"medium": 110.0,
-"large": 130.0
-},
-
-"default_size": "medium",
-
-"description": "Coffee slowly steeped in cold water for many hours producing smooth low-acidity black coffee served chilled over ice.",
-
-"tags": ["coffee","cold brew","black","smooth"],
-
-"allergens": [],
-"dietary_tags": ["vegan","dairy-free","gluten-free","vegetarian"],
-
-"base_milk": None,
-"customisable": False,
-
-"compatible_addons": [
-"vanilla_syrup",
-"caramel_syrup",
-"hazelnut_syrup",
-"extra_espresso_shot"
-],
-
-"category": "iced",
-"available": True
-},
-
-{
-"id": "classic_cold_coffee",
-"name": "Classic Cold Coffee",
-
-"prices": {
-"medium": 105.0
-},
-
-"default_size": "medium",
-
-"description": "Blended iced coffee drink made with chilled coffee, milk and ice creating a creamy refreshing café style cold coffee.",
-
-"tags": ["coffee","cold","creamy","sweet"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"vanilla_syrup",
-"caramel_syrup",
-"hazelnut_syrup",
-"whipped_cream_topping"
-],
-
-"category": "blended",
-"available": True
-},
-
-{
-"id": "mocha_cookie_frappe",
-"name": "Mocha Cookie Frappe",
-
-"prices": {
-"medium": 180.0
-},
-
-"default_size": "medium",
-
-"description": "Blended iced coffee frappe with chocolate mocha flavor and crushed cookie pieces. Thick, creamy dessert style coffee drink.",
-
-"tags": ["coffee","frappe","chocolate","dessert","blended"],
-
-"allergens": ["milk","gluten"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"whipped_cream_topping"
-],
-
-"category": "blended",
-"available": True
-},
-
-{
-"id": "matcha_latte",
-"name": "Matcha Latte",
-
-"prices": {
-"medium": 220.0
-},
-
-"default_size": "medium",
-
-"description": "Japanese matcha green tea whisked with milk creating a creamy earthy flavored tea latte with subtle bitterness and natural sweetness.",
-
-"tags": ["matcha","green tea","creamy","tea"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"vanilla_syrup"
-],
-
-"category": "tea",
-"available": True
-},
-
-{
-"id": "belgian_hot_chocolate",
-"name": "Belgian Hot Chocolate",
-
-"prices": {
-"medium": 170.0
-},
-
-"default_size": "medium",
-
-"description": "Rich hot chocolate made with Belgian cocoa and steamed milk creating a thick creamy chocolate drink.",
-
-"tags": ["chocolate","hot","sweet","creamy"],
-
-"allergens": ["milk"],
-"dietary_tags": ["vegetarian"],
-
-"base_milk": "whole_milk",
-"customisable": True,
-
-"compatible_addons": [
-"oat_milk_upgrade",
-"almond_milk_upgrade",
-"whipped_cream_topping",
-"marshmallow_topping"
-],
-
-"category": "hot",
-"available": True
-}
-
-]
+drinks = [   {   'allergens': [],
+        'available': True,
+        'base_milk': 'none',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'A small, strong coffee served in single or double '
+                       'shots.',
+        'dietary_tags': ['vegan', 'dairy-free', 'gluten-free', 'vegetarian'],
+        'id': 'espresso',
+        'name': 'Espresso',
+        'prices': {'large': 0, 'medium': 3.5},
+        'tags': ['strong', 'intense']},
+    {   'allergens': [],
+        'available': True,
+        'base_milk': 'none',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'Espresso diluted with hot water for a longer black '
+                       'coffee.',
+        'dietary_tags': ['vegan', 'dairy-free', 'gluten-free', 'vegetarian'],
+        'id': 'americano',
+        'name': 'Americano',
+        'prices': {'large': 0, 'medium': 3.0},
+        'tags': ['black coffee', 'diluted']},
+    {   'allergens': ['milk'],
+        'available': True,
+        'base_milk': 'whole_milk',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'Espresso “stained” with a dash of milk foam.',
+        'dietary_tags': ['vegetarian'],
+        'id': 'macchiato',
+        'name': 'Macchiato',
+        'prices': {'large': 0, 'medium': 4.0},
+        'tags': ['espresso', 'milk foam']},
+    {   'allergens': ['milk'],
+        'available': True,
+        'base_milk': 'whole_milk',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'Equal parts espresso and steamed milk for a rich but '
+                       'balanced small coffee.',
+        'dietary_tags': ['vegetarian'],
+        'id': 'cortado',
+        'name': 'Cortado',
+        'prices': {'large': 0, 'medium': 3.5},
+        'tags': ['espresso', 'balanced']},
+    {   'allergens': ['milk'],
+        'available': True,
+        'base_milk': 'whole_milk',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'A double shot of espresso with steamed milk and thin, '
+                       'velvety microfoam.',
+        'dietary_tags': ['vegetarian'],
+        'id': 'flat_white',
+        'name': 'Flat White',
+        'prices': {'large': 0, 'medium': 4.5},
+        'tags': ['espresso', 'microfoam']},
+    {   'allergens': ['milk', 'chocolate'],
+        'available': True,
+        'base_milk': 'whole_milk',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'Espresso with steamed milk and milk foam, and '
+                       'chocolate powder.',
+        'dietary_tags': ['vegetarian'],
+        'id': 'cappuccino',
+        'name': 'Cappuccino',
+        'prices': {'large': 0, 'medium': 4.5},
+        'tags': ['espresso', 'milk foam', 'chocolate']},
+    {   'allergens': ['milk'],
+        'available': True,
+        'base_milk': 'whole_milk',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'Espresso with a large amount of steamed milk and foam '
+                       'top.',
+        'dietary_tags': ['vegetarian'],
+        'id': 'latte',
+        'name': 'Latte',
+        'prices': {'large': 0, 'medium': 4.0},
+        'tags': ['espresso', 'milk']},
+    {   'allergens': ['milk', 'chocolate', 'dairy'],
+        'available': True,
+        'base_milk': 'whole_milk',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'A mix of espresso, chocolate, and whipped cream for a '
+                       'sweet treat.',
+        'dietary_tags': ['vegetarian'],
+        'id': 'mocha',
+        'name': 'Mocha',
+        'prices': {'large': 0, 'medium': 4.5},
+        'tags': ['espresso', 'chocolate', 'sweet', 'whipped cream']},
+    {   'allergens': ['milk'],
+        'available': True,
+        'base_milk': 'whole_milk',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'Steamed milk "stained" with a shot of espresso, '
+                       'layered with foam.',
+        'dietary_tags': ['vegetarian'],
+        'id': 'latte_macchiato',
+        'name': 'Latte Macchiato',
+        'prices': {'large': 0, 'medium': 3.5},
+        'tags': ['espresso', 'milk', 'layered']},
+    {   'allergens': [],
+        'available': True,
+        'base_milk': 'none',
+        'category': 'hot',
+        'compatible_addons': [],
+        'customisable': True,
+        'default_size': 'medium',
+        'description': 'A more concentrated, smaller shot of espresso, full of '
+                       'intense flavor.',
+        'dietary_tags': ['vegan', 'dairy-free', 'gluten-free', 'vegetarian'],
+        'id': 'ristretto',
+        'name': 'Ristretto',
+        'prices': {'large': 0, 'medium': 3.5},
+        'tags': ['espresso', 'concentrated', 'intense']}]

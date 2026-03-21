@@ -13,5 +13,6 @@ google-genai>=0.5.0
 # utilities
 python-dotenv>=1.0.1
 rich                           # console UI
+opendataloader                # PDF processing
 
 # add any other deps your project uses

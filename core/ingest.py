@@ -380,6 +380,33 @@ def ingest_catalog(name: str, items: list[dict], build_fn) -> None:
     print(f"  saved {index.ntotal} vectors → {STORAGE_DIR}/{name}.index")
     print(f"  saved metadata → {STORAGE_DIR}/{name}_metadata.json")
 
+def run_ingest():
+    import importlib
+    import data.drinks
+    import data.cookies
+    import data.customizations
+
+    importlib.reload(data.drinks)
+    importlib.reload(data.cookies)
+    importlib.reload(data.customizations)
+
+    from data.drinks import drinks
+    from data.cookies import cookies
+    from data.customizations import customizations
+
+    catalogs = [
+        ("drinks",         drinks,         build_text_drink),
+        ("customizations", customizations, build_text_customization),
+        ("cookies",        cookies,        build_text_snack),
+    ]
+
+    for name, items, build_fn in catalogs:
+        if not items:
+            print(f"[ingest] Skipping '{name}' — no items found.")
+            continue
+        ingest_catalog(name, items, build_fn)
+
+    print("\n[ingest] All indexes rebuilt.")
 
 def main():
     """
@@ -392,7 +419,8 @@ def main():
 
     print("\nAll indexes built successfully.")
     print("Run python app.py to start the CLI.")
-
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()
